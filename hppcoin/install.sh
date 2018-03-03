@@ -60,8 +60,4 @@ echo '***インストールを開始します***'
   hppcoin-cli getinfo
   sleep 2
   echo '同期が完了すれば、hppcoin-qtのウォレットからマスターノードを実行できます！'
-  sleep 2
-else
-  echo "入力が間違っているようです。アップデートの場合: '-u', 新規インストールの場合: '-i'をオプションとしてください。"
-　echo "終了します。"
-fi
+  echo "++END++"
