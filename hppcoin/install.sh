@@ -17,8 +17,7 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:bitcoin/bitcoin -y
 sudo apt-get update -y
 sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-sleep 1
-echo '*** 完了 1/4 ***'
+sleep echo '*** 完了 1/4 ***'
 sleep 1
 echo '*** ステップ 2/4 ***'
 echo '*** ファイアウォールの設定・スタートを行います。 ***'
@@ -53,14 +52,14 @@ echo '***インストールを開始します***'
     echo "入力されたプライベートキーは正しくありません。もう一度確認してください。"
     read mngenkey
   done
-  echo -e "rpcuser=$rpcusr \nrpcpassword=$rpcpass \nrpcallowip=127.0.0.1 \nlisten=1 \nserver=1 \ndaemon=1 \nstaking=0 \nlmnode=1 \nlogtimestamps=1 \nmaxconnections=256 \nexternalip=$ipaddress:28878 \nbind=$ipaddress \nlmnodeprivkey=$mngenkey \n" > ~/.phore/phore.conf
+  echo -e "rpcuser=$rpcusr\nrpcpassword=$rpcpass\nrpcallowip=127.0.0.1\nlisten=1\nserver=1\ndaemon=1\nstaking=0\nlmnode=1\nlogtimestamps=1\nmaxconnections=256\nexternalip=$ipaddress:28878\nbind=$ipaddress\nlmnodeprivkey=$mngenkey\n" > ~/.hppcoin/hppcoin.conf
   echo '*** 設定が完了しましたので、ウォレットを起動して同期を開始します。 ***'
   hppcoind
   echo '10秒後に getinfo コマンドの出力結果を表示します。'
   sleep 10
   hppcoin-cli getinfo
   sleep 2
-  echo '同期が完了すれば、phore-qtのウォレットからマスターノードを実行できます！'
+  echo '同期が完了すれば、hppcoin-qtのウォレットからマスターノードを実行できます！'
   sleep 2
 else
   echo "入力が間違っているようです。アップデートの場合: '-u', 新規インストールの場合: '-i'をオプションとしてください。"
