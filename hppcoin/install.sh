@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 #please do this script as root.
 ######################################################################
 echo "*********** hppcoin マスターノード設定スクリプトへようこそ ***********"
@@ -36,11 +36,13 @@ echo '*** ステップ 3/4 ***'
 echo '***hppcoind, hppcoin-cliをダウンロード***'
 wget https://www.dropbox.com/s/dq0tke0mt21tvqy/hppcoind
 wget https://www.dropbox.com/s/398bdhab82lhm0c/hppcoin-cli
+chmod +x hppcoind hppcoin-cli
 sudo mv hppcoind hppcoin-cli /usr/local/bin/
 echo '***インストールを開始します***'
   echo '*** インストールとしてウォレットの起動・初期設定を行います。 ***'
   sleep 1
   mkdir .hppcoin
+  touch .hppcoin/hppcoin.conf
   rpcusr=$(more /dev/urandom  | tr -d -c '[:alnum:]' | fold -w 20 | head -1)
   rpcpass=$(more /dev/urandom  | tr -d -c '[:alnum:]' | fold -w 20 | head -1)
   ipaddress=$(curl inet-ip.info)
